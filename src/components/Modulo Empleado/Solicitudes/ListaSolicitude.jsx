@@ -28,7 +28,6 @@ const ListarSolicitudesPendientes = () => {
   const [view, setView] = useState("pendientes"); // Estado para manejar la vista actual
   const [showEditModal, setShowEditModal] = useState(false);
   const [editSolicitudId, setEditSolicitudId] = useState(null);
-  const [solicitudRevision, setSolicitudRevision] = useState(null);
 
   useEffect(() => {
     fetchSolicitudes();
@@ -313,7 +312,7 @@ const ListarSolicitudesPendientes = () => {
                           {solicitud["Estado"]}
                         </td>
                         <td className="py-3 px-6 text-left">
-                          {(solicitud["Estado"] !== "en revisión" && solicitud["Estado"] !== "en edición") && (
+                          {(solicitud["Estado"] !== "en revisión" && solicitud["Estado"] !== "pendiente") && (
                             <button
                               className="p-2 bg-yellow-500 text-white rounded-full mr-2"
                               title="Editar Solicitud de Movilización"
@@ -329,7 +328,7 @@ const ListarSolicitudesPendientes = () => {
                           >
                             <FontAwesomeIcon icon={faEye} />
                           </button>
-                          {(solicitud["Estado"] !== "en revisión" && solicitud["Estado"] !== "en edición") && (
+                          {(solicitud["Estado"] !== "en revisión" && solicitud["Estado"] !== "pendiente") && (
                             <button
                               className="p-2 bg-red-500 text-white rounded-full mr-2"
                               title="Cancelar Solicitud de Movilización"

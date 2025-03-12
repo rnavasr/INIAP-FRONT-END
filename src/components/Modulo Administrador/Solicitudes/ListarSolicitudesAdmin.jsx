@@ -207,7 +207,7 @@ const ListarSolicitudesPendientesAdmin = () => {
                     <td className="py-3 px-6 text-left">{solicitud['Motivo']}</td>
                     <td className="py-3 px-6 text-left">{solicitud['Estado']}</td>
                     <td className="py-3 px-6 text-left">
-                      {(solicitud["Estado"] !== "en revisión" && solicitud["Estado"] !== "en edición") && (
+                      {(solicitud["Estado"] !== "en revisión" && solicitud["Estado"] !== "pendiente") && (
                         <button
                           className="p-2 bg-blue-500 text-white rounded-full"
                           title="Ver Solicitud de Movilización"
